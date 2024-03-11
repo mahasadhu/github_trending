@@ -1,11 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'GithubRepo.freezed.dart';
-part 'GithubRepo.g.dart';
+part 'github_repo.freezed.dart';
+part 'github_repo.g.dart';
 
 @freezed
 class GithubRepo with _$GithubRepo {
   const factory GithubRepo({
+    required String id,
     required String avatarUrl,
     required String owner,
     required String name,

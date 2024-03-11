@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'GithubRepo.dart';
+part of 'github_repo.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -8,6 +8,7 @@ part of 'GithubRepo.dart';
 
 _$GithubRepoImpl _$$GithubRepoImplFromJson(Map<String, dynamic> json) =>
     _$GithubRepoImpl(
+      id: json['id'] as String,
       avatarUrl: json['avatarUrl'] as String,
       owner: json['owner'] as String,
       name: json['name'] as String,
@@ -20,6 +21,7 @@ _$GithubRepoImpl _$$GithubRepoImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$GithubRepoImplToJson(_$GithubRepoImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'avatarUrl': instance.avatarUrl,
       'owner': instance.owner,
       'name': instance.name,

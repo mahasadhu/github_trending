@@ -1,3 +1,3 @@
 library models;
 
-export 'src/GithubRepo.dart';
+export 'src/github_repo.dart';

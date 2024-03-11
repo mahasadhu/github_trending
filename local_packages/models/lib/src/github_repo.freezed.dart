@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'GithubRepo.dart';
+part of 'github_repo.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -20,6 +20,7 @@ GithubRepo _$GithubRepoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GithubRepo {
+  String get id => throw _privateConstructorUsedError;
   String get avatarUrl => throw _privateConstructorUsedError;
   String get owner => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -42,7 +43,8 @@ abstract class $GithubRepoCopyWith<$Res> {
       _$GithubRepoCopyWithImpl<$Res, GithubRepo>;
   @useResult
   $Res call(
-      {String avatarUrl,
+      {String id,
+      String avatarUrl,
       String owner,
       String name,
       String description,
@@ -65,6 +67,7 @@ class _$GithubRepoCopyWithImpl<$Res, $Val extends GithubRepo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? avatarUrl = null,
     Object? owner = null,
     Object? name = null,
@@ -75,6 +78,10 @@ class _$GithubRepoCopyWithImpl<$Res, $Val extends GithubRepo>
     Object? isExpanded = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -120,7 +127,8 @@ abstract class _$$GithubRepoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String avatarUrl,
+      {String id,
+      String avatarUrl,
       String owner,
       String name,
       String description,
@@ -141,6 +149,7 @@ class __$$GithubRepoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? avatarUrl = null,
     Object? owner = null,
     Object? name = null,
@@ -151,6 +160,10 @@ class __$$GithubRepoImplCopyWithImpl<$Res>
     Object? isExpanded = null,
   }) {
     return _then(_$GithubRepoImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       avatarUrl: null == avatarUrl
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -191,7 +204,8 @@ class __$$GithubRepoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$GithubRepoImpl implements _GithubRepo {
   const _$GithubRepoImpl(
-      {required this.avatarUrl,
+      {required this.id,
+      required this.avatarUrl,
       required this.owner,
       required this.name,
       required this.description,
@@ -203,6 +217,8 @@ class _$GithubRepoImpl implements _GithubRepo {
   factory _$GithubRepoImpl.fromJson(Map<String, dynamic> json) =>
       _$$GithubRepoImplFromJson(json);
 
+  @override
+  final String id;
   @override
   final String avatarUrl;
   @override
@@ -222,7 +238,7 @@ class _$GithubRepoImpl implements _GithubRepo {
 
   @override
   String toString() {
-    return 'GithubRepo(avatarUrl: $avatarUrl, owner: $owner, name: $name, description: $description, language: $language, stargazerCount: $stargazerCount, forksCount: $forksCount, isExpanded: $isExpanded)';
+    return 'GithubRepo(id: $id, avatarUrl: $avatarUrl, owner: $owner, name: $name, description: $description, language: $language, stargazerCount: $stargazerCount, forksCount: $forksCount, isExpanded: $isExpanded)';
   }
 
   @override
@@ -230,6 +246,7 @@ class _$GithubRepoImpl implements _GithubRepo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GithubRepoImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.avatarUrl, avatarUrl) ||
                 other.avatarUrl == avatarUrl) &&
             (identical(other.owner, owner) || other.owner == owner) &&
@@ -248,7 +265,7 @@ class _$GithubRepoImpl implements _GithubRepo {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, avatarUrl, owner, name,
+  int get hashCode => Object.hash(runtimeType, id, avatarUrl, owner, name,
       description, language, stargazerCount, forksCount, isExpanded);
 
   @JsonKey(ignore: true)
@@ -267,7 +284,8 @@ class _$GithubRepoImpl implements _GithubRepo {
 
 abstract class _GithubRepo implements GithubRepo {
   const factory _GithubRepo(
-      {required final String avatarUrl,
+      {required final String id,
+      required final String avatarUrl,
       required final String owner,
       required final String name,
       required final String description,
@@ -279,6 +297,8 @@ abstract class _GithubRepo implements GithubRepo {
   factory _GithubRepo.fromJson(Map<String, dynamic> json) =
       _$GithubRepoImpl.fromJson;
 
+  @override
+  String get id;
   @override
   String get avatarUrl;
   @override
