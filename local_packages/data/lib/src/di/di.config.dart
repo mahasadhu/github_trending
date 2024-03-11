@@ -11,8 +11,8 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../repositories/GithubTrendingRepository.dart' as _i3;
-import '../repositories/GithubTrendingRepositoryImpl.dart' as _i4;
+import '../repositories/github_trending_repository.dart' as _i3;
+import '../repositories/github_trending_repository_impl.dart' as _i4;
 
 // initializes the registration of main-scope dependencies inside of GetIt
 _i1.GetIt init(

@@ -2,17 +2,26 @@ import 'dart:async';
 
 import 'package:injectable/injectable.dart';
 import 'package:models/models.dart';
-import 'GithubTrendingRepository.dart';
+import 'github_trending_repository.dart';
 
 @LazySingleton(as: GithubTrendingRepository)
 class GithubTrendingRepositoryImpl implements GithubTrendingRepository {
   final StreamController<List<GithubRepo>> _githubTrendingData =
       StreamController<List<GithubRepo>>();
+  List<GithubRepo> lastValue = List.empty();
+
+  GithubTrendingRepositoryImpl() {
+    _githubTrendingData.stream.listen((event) {
+      lastValue = event;
+      print("GithubTrendingRepository:$lastValue");
+    });
+  }
 
   @override
   Future<void> getGithubTrendingData() async {
     List<GithubRepo> dummyData = [
       const GithubRepo(
+        id: "0",
         avatarUrl: "",
         owner: "owner",
         name: "name",
@@ -23,6 +32,7 @@ class GithubTrendingRepositoryImpl implements GithubTrendingRepository {
         isExpanded: false,
       ),
       const GithubRepo(
+        id: "1",
         avatarUrl: " 1",
         owner: "owner 1",
         name: "name 1",
