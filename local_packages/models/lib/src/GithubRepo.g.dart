@@ -15,6 +15,7 @@ _$GithubRepoImpl _$$GithubRepoImplFromJson(Map<String, dynamic> json) =>
       language: json['language'] as String,
       stargazerCount: json['stargazerCount'] as String,
       forksCount: json['forksCount'] as String,
+      isExpanded: json['isExpanded'] as bool,
     );
 
 Map<String, dynamic> _$$GithubRepoImplToJson(_$GithubRepoImpl instance) =>
@@ -26,4 +27,5 @@ Map<String, dynamic> _$$GithubRepoImplToJson(_$GithubRepoImpl instance) =>
       'language': instance.language,
       'stargazerCount': instance.stargazerCount,
       'forksCount': instance.forksCount,
+      'isExpanded': instance.isExpanded,
     };

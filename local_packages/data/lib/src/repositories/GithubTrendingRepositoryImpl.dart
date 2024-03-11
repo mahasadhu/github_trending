@@ -11,24 +11,27 @@ class GithubTrendingRepositoryImpl implements GithubTrendingRepository {
 
   @override
   Future<void> getGithubTrendingData() async {
-
     List<GithubRepo> dummyData = [
       const GithubRepo(
-          avatarUrl: "",
-          owner: "owner",
-          name: "name",
-          description: "description",
-          language: "language",
-          stargazerCount: "stargazerCount",
-          forksCount: "forksCount"),
+        avatarUrl: "",
+        owner: "owner",
+        name: "name",
+        description: "description",
+        language: "language",
+        stargazerCount: "stargazerCount",
+        forksCount: "forksCount",
+        isExpanded: false,
+      ),
       const GithubRepo(
-          avatarUrl: " 1",
-          owner: "owner 1",
-          name: "name 1",
-          description: "description 1",
-          language: "language 1",
-          stargazerCount: "stargazerCount 1",
-          forksCount: "forksCount 1")
+        avatarUrl: " 1",
+        owner: "owner 1",
+        name: "name 1",
+        description: "description 1",
+        language: "language 1",
+        stargazerCount: "stargazerCount 1",
+        forksCount: "forksCount 1",
+        isExpanded: false,
+      )
     ];
 
     _githubTrendingData.add(dummyData);

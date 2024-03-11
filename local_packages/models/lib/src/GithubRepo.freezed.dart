@@ -27,6 +27,7 @@ mixin _$GithubRepo {
   String get language => throw _privateConstructorUsedError;
   String get stargazerCount => throw _privateConstructorUsedError;
   String get forksCount => throw _privateConstructorUsedError;
+  bool get isExpanded => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,7 +48,8 @@ abstract class $GithubRepoCopyWith<$Res> {
       String description,
       String language,
       String stargazerCount,
-      String forksCount});
+      String forksCount,
+      bool isExpanded});
 }
 
 /// @nodoc
@@ -70,6 +72,7 @@ class _$GithubRepoCopyWithImpl<$Res, $Val extends GithubRepo>
     Object? language = null,
     Object? stargazerCount = null,
     Object? forksCount = null,
+    Object? isExpanded = null,
   }) {
     return _then(_value.copyWith(
       avatarUrl: null == avatarUrl
@@ -100,6 +103,10 @@ class _$GithubRepoCopyWithImpl<$Res, $Val extends GithubRepo>
           ? _value.forksCount
           : forksCount // ignore: cast_nullable_to_non_nullable
               as String,
+      isExpanded: null == isExpanded
+          ? _value.isExpanded
+          : isExpanded // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -119,7 +126,8 @@ abstract class _$$GithubRepoImplCopyWith<$Res>
       String description,
       String language,
       String stargazerCount,
-      String forksCount});
+      String forksCount,
+      bool isExpanded});
 }
 
 /// @nodoc
@@ -140,6 +148,7 @@ class __$$GithubRepoImplCopyWithImpl<$Res>
     Object? language = null,
     Object? stargazerCount = null,
     Object? forksCount = null,
+    Object? isExpanded = null,
   }) {
     return _then(_$GithubRepoImpl(
       avatarUrl: null == avatarUrl
@@ -170,6 +179,10 @@ class __$$GithubRepoImplCopyWithImpl<$Res>
           ? _value.forksCount
           : forksCount // ignore: cast_nullable_to_non_nullable
               as String,
+      isExpanded: null == isExpanded
+          ? _value.isExpanded
+          : isExpanded // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -184,7 +197,8 @@ class _$GithubRepoImpl implements _GithubRepo {
       required this.description,
       required this.language,
       required this.stargazerCount,
-      required this.forksCount});
+      required this.forksCount,
+      required this.isExpanded});
 
   factory _$GithubRepoImpl.fromJson(Map<String, dynamic> json) =>
       _$$GithubRepoImplFromJson(json);
@@ -203,10 +217,12 @@ class _$GithubRepoImpl implements _GithubRepo {
   final String stargazerCount;
   @override
   final String forksCount;
+  @override
+  final bool isExpanded;
 
   @override
   String toString() {
-    return 'GithubRepo(avatarUrl: $avatarUrl, owner: $owner, name: $name, description: $description, language: $language, stargazerCount: $stargazerCount, forksCount: $forksCount)';
+    return 'GithubRepo(avatarUrl: $avatarUrl, owner: $owner, name: $name, description: $description, language: $language, stargazerCount: $stargazerCount, forksCount: $forksCount, isExpanded: $isExpanded)';
   }
 
   @override
@@ -225,13 +241,15 @@ class _$GithubRepoImpl implements _GithubRepo {
             (identical(other.stargazerCount, stargazerCount) ||
                 other.stargazerCount == stargazerCount) &&
             (identical(other.forksCount, forksCount) ||
-                other.forksCount == forksCount));
+                other.forksCount == forksCount) &&
+            (identical(other.isExpanded, isExpanded) ||
+                other.isExpanded == isExpanded));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, avatarUrl, owner, name,
-      description, language, stargazerCount, forksCount);
+      description, language, stargazerCount, forksCount, isExpanded);
 
   @JsonKey(ignore: true)
   @override
@@ -255,7 +273,8 @@ abstract class _GithubRepo implements GithubRepo {
       required final String description,
       required final String language,
       required final String stargazerCount,
-      required final String forksCount}) = _$GithubRepoImpl;
+      required final String forksCount,
+      required final bool isExpanded}) = _$GithubRepoImpl;
 
   factory _GithubRepo.fromJson(Map<String, dynamic> json) =
       _$GithubRepoImpl.fromJson;
@@ -274,6 +293,8 @@ abstract class _GithubRepo implements GithubRepo {
   String get stargazerCount;
   @override
   String get forksCount;
+  @override
+  bool get isExpanded;
   @override
   @JsonKey(ignore: true)
   _$$GithubRepoImplCopyWith<_$GithubRepoImpl> get copyWith =>

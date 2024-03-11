@@ -12,7 +12,8 @@ class GithubRepo with _$GithubRepo {
     required String description,
     required String language,
     required String stargazerCount,
-    required String forksCount
+    required String forksCount,
+    required bool isExpanded,
   }) = _GithubRepo;
 
   factory GithubRepo.fromJson(Map<String, Object?> json) =>
