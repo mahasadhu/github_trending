@@ -4,6 +4,8 @@ abstract class GithubTrendingRepository {
 
   Stream<List<GithubRepo>> get githubTrendingData;
 
-  Future<void> getGithubTrendingData();
+  Future<Resource<List<GithubRepo>>> getGithubTrendingData();
+
+  Future<List<GithubRepo>> toggleExpanded(String githubRepoId);
 
 }
