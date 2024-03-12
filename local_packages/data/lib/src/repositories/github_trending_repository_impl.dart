@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:data/src/network/dtos/github_repo_dto.dart';
+import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:models/models.dart';
 import 'package:rxdart/rxdart.dart';
@@ -7,12 +9,13 @@ import 'github_trending_repository.dart';
 
 @LazySingleton(as: GithubTrendingRepository)
 class GithubTrendingRepositoryImpl implements GithubTrendingRepository {
-
-  final BehaviorSubject<List<GithubRepo>> _githubTrendingData = BehaviorSubject();
+  final BehaviorSubject<List<GithubRepo>> _githubTrendingData =
+      BehaviorSubject();
+  final Dio _httpClient;
 
   List<GithubRepo> lastValue = List.empty();
 
-  GithubTrendingRepositoryImpl() {
+  GithubTrendingRepositoryImpl(this._httpClient) {
     _githubTrendingData.stream.listen((event) {
       lastValue = event;
       print("GithubTrendingRepository:$lastValue");
@@ -21,38 +24,37 @@ class GithubTrendingRepositoryImpl implements GithubTrendingRepository {
 
   @override
   Future<Resource<List<GithubRepo>>> getGithubTrendingData() async {
+    List<GithubRepo> githubRepos;
+    try {
+      Response response = await _httpClient.get("/orgs/octokit/repos");
+      githubRepos =
+          GithubRepoDTOList.fromJson({"githubRepoDTOList": response.data})
+              .githubRepoDTOList
+              .map((e) => e.map())
+              .toList();
 
-    await Future.delayed(const Duration(seconds: 3));
+    } on DioException catch (e) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx and is also not 304.
+      if (e.response != null) {
+        print('Dio error!');
+        print('STATUS: ${e.response?.statusCode}');
+        print('DATA: ${e.response?.data}');
+        print('HEADERS: ${e.response?.headers}');
+      } else {
+        // Error due to setting up or sending the request
+        print('Error sending request!');
+        print(e.message);
+        print(e.toString());
+      }
 
-    List<GithubRepo> dummyData = [
-      const GithubRepo(
-        id: "0",
-        avatarUrl: "",
-        owner: "owner",
-        name: "name",
-        description: "description",
-        language: "language",
-        stargazerCount: "stargazerCount",
-        forksCount: "forksCount",
-        isExpanded: false,
-      ),
-      const GithubRepo(
-        id: "1",
-        avatarUrl: " 1",
-        owner: "owner 1",
-        name: "name 3",
-        description: "description 1",
-        language: "language 1",
-        stargazerCount: "stargazerCount 1",
-        forksCount: "forksCount 1",
-        isExpanded: true,
-      )
-    ];
+      githubRepos = List.empty();
 
-    _githubTrendingData.add(dummyData);
+      return ResourceError(e.message ?? "Unknown Error", e);
+    }
 
-    // return ResourceError("error neh", null);
-    return ResourceSuccess(dummyData);
+    _githubTrendingData.add(githubRepos);
+    return ResourceSuccess(githubRepos);
   }
 
   @override

@@ -45,6 +45,7 @@ dependencies:
   flutter_bloc: ^8.1.4
   freezed_annotation: ^2.4.1
   rxdart: ^0.27.7
+  dio: ^5.4.1
 
 dev_dependencies:
   flutter_test:
