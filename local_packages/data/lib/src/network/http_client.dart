@@ -1,10 +1,11 @@
 import 'package:dio/dio.dart';
+import '../env/env_manager.dart';
 
 class HttpClient {
-  static Dio initDio() {
+  static Dio initDio(EnvManager envManager) {
     final dio = Dio();
 
-    dio.options.baseUrl = "https://api.github.com";
+    dio.options.baseUrl = envManager.getBaseUrl();
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (
@@ -14,7 +15,7 @@ class HttpClient {
           options.headers.addAll(
             {
               "Authorization":
-                  "Bearer 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",
+                  "Bearer ${envManager.getGithubApiKey()}",
               "X-GitHub-Api-Version": "2022-11-28"
             },
           );

@@ -7,7 +7,7 @@ import 'package:models/models.dart';
 import 'package:rxdart/rxdart.dart';
 import 'github_trending_repository.dart';
 
-@LazySingleton(as: GithubTrendingRepository)
+@Singleton(as: GithubTrendingRepository)
 class GithubTrendingRepositoryImpl implements GithubTrendingRepository {
   final BehaviorSubject<List<GithubRepo>> _githubTrendingData =
       BehaviorSubject();
