@@ -19,25 +19,28 @@ mixin _$GithubTrendingEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() githubTrendingStarted,
+    required TResult Function() githubTrendingRefreshed,
     required TResult Function() githubTrendingSortByStarsClicked,
     required TResult Function() githubTrendingSortByNameClicked,
-    required TResult Function() githubTrendingItemClicked,
+    required TResult Function(GithubRepo data) githubTrendingItemClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? githubTrendingStarted,
+    TResult? Function()? githubTrendingRefreshed,
     TResult? Function()? githubTrendingSortByStarsClicked,
     TResult? Function()? githubTrendingSortByNameClicked,
-    TResult? Function()? githubTrendingItemClicked,
+    TResult? Function(GithubRepo data)? githubTrendingItemClicked,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? githubTrendingStarted,
+    TResult Function()? githubTrendingRefreshed,
     TResult Function()? githubTrendingSortByStarsClicked,
     TResult Function()? githubTrendingSortByNameClicked,
-    TResult Function()? githubTrendingItemClicked,
+    TResult Function(GithubRepo data)? githubTrendingItemClicked,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +48,8 @@ mixin _$GithubTrendingEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_GithubTrendingStarted value)
         githubTrendingStarted,
+    required TResult Function(_GithubTrendingRefreshed value)
+        githubTrendingRefreshed,
     required TResult Function(_GithubTrendingSortByStarsClicked value)
         githubTrendingSortByStarsClicked,
     required TResult Function(_GithubTrendingSortByNameClicked value)
@@ -56,6 +61,7 @@ mixin _$GithubTrendingEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult? Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult? Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult? Function(_GithubTrendingSortByNameClicked value)?
@@ -67,6 +73,7 @@ mixin _$GithubTrendingEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult Function(_GithubTrendingSortByNameClicked value)?
@@ -137,9 +144,10 @@ class _$GithubTrendingStartedImpl implements _GithubTrendingStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() githubTrendingStarted,
+    required TResult Function() githubTrendingRefreshed,
     required TResult Function() githubTrendingSortByStarsClicked,
     required TResult Function() githubTrendingSortByNameClicked,
-    required TResult Function() githubTrendingItemClicked,
+    required TResult Function(GithubRepo data) githubTrendingItemClicked,
   }) {
     return githubTrendingStarted();
   }
@@ -148,9 +156,10 @@ class _$GithubTrendingStartedImpl implements _GithubTrendingStarted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? githubTrendingStarted,
+    TResult? Function()? githubTrendingRefreshed,
     TResult? Function()? githubTrendingSortByStarsClicked,
     TResult? Function()? githubTrendingSortByNameClicked,
-    TResult? Function()? githubTrendingItemClicked,
+    TResult? Function(GithubRepo data)? githubTrendingItemClicked,
   }) {
     return githubTrendingStarted?.call();
   }
@@ -159,9 +168,10 @@ class _$GithubTrendingStartedImpl implements _GithubTrendingStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? githubTrendingStarted,
+    TResult Function()? githubTrendingRefreshed,
     TResult Function()? githubTrendingSortByStarsClicked,
     TResult Function()? githubTrendingSortByNameClicked,
-    TResult Function()? githubTrendingItemClicked,
+    TResult Function(GithubRepo data)? githubTrendingItemClicked,
     required TResult orElse(),
   }) {
     if (githubTrendingStarted != null) {
@@ -175,6 +185,8 @@ class _$GithubTrendingStartedImpl implements _GithubTrendingStarted {
   TResult map<TResult extends Object?>({
     required TResult Function(_GithubTrendingStarted value)
         githubTrendingStarted,
+    required TResult Function(_GithubTrendingRefreshed value)
+        githubTrendingRefreshed,
     required TResult Function(_GithubTrendingSortByStarsClicked value)
         githubTrendingSortByStarsClicked,
     required TResult Function(_GithubTrendingSortByNameClicked value)
@@ -189,6 +201,7 @@ class _$GithubTrendingStartedImpl implements _GithubTrendingStarted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult? Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult? Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult? Function(_GithubTrendingSortByNameClicked value)?
@@ -203,6 +216,7 @@ class _$GithubTrendingStartedImpl implements _GithubTrendingStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult Function(_GithubTrendingSortByNameClicked value)?
@@ -220,6 +234,141 @@ class _$GithubTrendingStartedImpl implements _GithubTrendingStarted {
 
 abstract class _GithubTrendingStarted implements GithubTrendingEvent {
   const factory _GithubTrendingStarted() = _$GithubTrendingStartedImpl;
+}
+
+/// @nodoc
+abstract class _$$GithubTrendingRefreshedImplCopyWith<$Res> {
+  factory _$$GithubTrendingRefreshedImplCopyWith(
+          _$GithubTrendingRefreshedImpl value,
+          $Res Function(_$GithubTrendingRefreshedImpl) then) =
+      __$$GithubTrendingRefreshedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GithubTrendingRefreshedImplCopyWithImpl<$Res>
+    extends _$GithubTrendingEventCopyWithImpl<$Res,
+        _$GithubTrendingRefreshedImpl>
+    implements _$$GithubTrendingRefreshedImplCopyWith<$Res> {
+  __$$GithubTrendingRefreshedImplCopyWithImpl(
+      _$GithubTrendingRefreshedImpl _value,
+      $Res Function(_$GithubTrendingRefreshedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GithubTrendingRefreshedImpl implements _GithubTrendingRefreshed {
+  const _$GithubTrendingRefreshedImpl();
+
+  @override
+  String toString() {
+    return 'GithubTrendingEvent.githubTrendingRefreshed()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GithubTrendingRefreshedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() githubTrendingStarted,
+    required TResult Function() githubTrendingRefreshed,
+    required TResult Function() githubTrendingSortByStarsClicked,
+    required TResult Function() githubTrendingSortByNameClicked,
+    required TResult Function(GithubRepo data) githubTrendingItemClicked,
+  }) {
+    return githubTrendingRefreshed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? githubTrendingStarted,
+    TResult? Function()? githubTrendingRefreshed,
+    TResult? Function()? githubTrendingSortByStarsClicked,
+    TResult? Function()? githubTrendingSortByNameClicked,
+    TResult? Function(GithubRepo data)? githubTrendingItemClicked,
+  }) {
+    return githubTrendingRefreshed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? githubTrendingStarted,
+    TResult Function()? githubTrendingRefreshed,
+    TResult Function()? githubTrendingSortByStarsClicked,
+    TResult Function()? githubTrendingSortByNameClicked,
+    TResult Function(GithubRepo data)? githubTrendingItemClicked,
+    required TResult orElse(),
+  }) {
+    if (githubTrendingRefreshed != null) {
+      return githubTrendingRefreshed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GithubTrendingStarted value)
+        githubTrendingStarted,
+    required TResult Function(_GithubTrendingRefreshed value)
+        githubTrendingRefreshed,
+    required TResult Function(_GithubTrendingSortByStarsClicked value)
+        githubTrendingSortByStarsClicked,
+    required TResult Function(_GithubTrendingSortByNameClicked value)
+        githubTrendingSortByNameClicked,
+    required TResult Function(_GithubTrendingItemClicked value)
+        githubTrendingItemClicked,
+  }) {
+    return githubTrendingRefreshed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult? Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
+    TResult? Function(_GithubTrendingSortByStarsClicked value)?
+        githubTrendingSortByStarsClicked,
+    TResult? Function(_GithubTrendingSortByNameClicked value)?
+        githubTrendingSortByNameClicked,
+    TResult? Function(_GithubTrendingItemClicked value)?
+        githubTrendingItemClicked,
+  }) {
+    return githubTrendingRefreshed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
+    TResult Function(_GithubTrendingSortByStarsClicked value)?
+        githubTrendingSortByStarsClicked,
+    TResult Function(_GithubTrendingSortByNameClicked value)?
+        githubTrendingSortByNameClicked,
+    TResult Function(_GithubTrendingItemClicked value)?
+        githubTrendingItemClicked,
+    required TResult orElse(),
+  }) {
+    if (githubTrendingRefreshed != null) {
+      return githubTrendingRefreshed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GithubTrendingRefreshed implements GithubTrendingEvent {
+  const factory _GithubTrendingRefreshed() = _$GithubTrendingRefreshedImpl;
 }
 
 /// @nodoc
@@ -266,9 +415,10 @@ class _$GithubTrendingSortByStarsClickedImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() githubTrendingStarted,
+    required TResult Function() githubTrendingRefreshed,
     required TResult Function() githubTrendingSortByStarsClicked,
     required TResult Function() githubTrendingSortByNameClicked,
-    required TResult Function() githubTrendingItemClicked,
+    required TResult Function(GithubRepo data) githubTrendingItemClicked,
   }) {
     return githubTrendingSortByStarsClicked();
   }
@@ -277,9 +427,10 @@ class _$GithubTrendingSortByStarsClickedImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? githubTrendingStarted,
+    TResult? Function()? githubTrendingRefreshed,
     TResult? Function()? githubTrendingSortByStarsClicked,
     TResult? Function()? githubTrendingSortByNameClicked,
-    TResult? Function()? githubTrendingItemClicked,
+    TResult? Function(GithubRepo data)? githubTrendingItemClicked,
   }) {
     return githubTrendingSortByStarsClicked?.call();
   }
@@ -288,9 +439,10 @@ class _$GithubTrendingSortByStarsClickedImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? githubTrendingStarted,
+    TResult Function()? githubTrendingRefreshed,
     TResult Function()? githubTrendingSortByStarsClicked,
     TResult Function()? githubTrendingSortByNameClicked,
-    TResult Function()? githubTrendingItemClicked,
+    TResult Function(GithubRepo data)? githubTrendingItemClicked,
     required TResult orElse(),
   }) {
     if (githubTrendingSortByStarsClicked != null) {
@@ -304,6 +456,8 @@ class _$GithubTrendingSortByStarsClickedImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_GithubTrendingStarted value)
         githubTrendingStarted,
+    required TResult Function(_GithubTrendingRefreshed value)
+        githubTrendingRefreshed,
     required TResult Function(_GithubTrendingSortByStarsClicked value)
         githubTrendingSortByStarsClicked,
     required TResult Function(_GithubTrendingSortByNameClicked value)
@@ -318,6 +472,7 @@ class _$GithubTrendingSortByStarsClickedImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult? Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult? Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult? Function(_GithubTrendingSortByNameClicked value)?
@@ -332,6 +487,7 @@ class _$GithubTrendingSortByStarsClickedImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult Function(_GithubTrendingSortByNameClicked value)?
@@ -397,9 +553,10 @@ class _$GithubTrendingSortByNameClickedImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() githubTrendingStarted,
+    required TResult Function() githubTrendingRefreshed,
     required TResult Function() githubTrendingSortByStarsClicked,
     required TResult Function() githubTrendingSortByNameClicked,
-    required TResult Function() githubTrendingItemClicked,
+    required TResult Function(GithubRepo data) githubTrendingItemClicked,
   }) {
     return githubTrendingSortByNameClicked();
   }
@@ -408,9 +565,10 @@ class _$GithubTrendingSortByNameClickedImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? githubTrendingStarted,
+    TResult? Function()? githubTrendingRefreshed,
     TResult? Function()? githubTrendingSortByStarsClicked,
     TResult? Function()? githubTrendingSortByNameClicked,
-    TResult? Function()? githubTrendingItemClicked,
+    TResult? Function(GithubRepo data)? githubTrendingItemClicked,
   }) {
     return githubTrendingSortByNameClicked?.call();
   }
@@ -419,9 +577,10 @@ class _$GithubTrendingSortByNameClickedImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? githubTrendingStarted,
+    TResult Function()? githubTrendingRefreshed,
     TResult Function()? githubTrendingSortByStarsClicked,
     TResult Function()? githubTrendingSortByNameClicked,
-    TResult Function()? githubTrendingItemClicked,
+    TResult Function(GithubRepo data)? githubTrendingItemClicked,
     required TResult orElse(),
   }) {
     if (githubTrendingSortByNameClicked != null) {
@@ -435,6 +594,8 @@ class _$GithubTrendingSortByNameClickedImpl
   TResult map<TResult extends Object?>({
     required TResult Function(_GithubTrendingStarted value)
         githubTrendingStarted,
+    required TResult Function(_GithubTrendingRefreshed value)
+        githubTrendingRefreshed,
     required TResult Function(_GithubTrendingSortByStarsClicked value)
         githubTrendingSortByStarsClicked,
     required TResult Function(_GithubTrendingSortByNameClicked value)
@@ -449,6 +610,7 @@ class _$GithubTrendingSortByNameClickedImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult? Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult? Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult? Function(_GithubTrendingSortByNameClicked value)?
@@ -463,6 +625,7 @@ class _$GithubTrendingSortByNameClickedImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult Function(_GithubTrendingSortByNameClicked value)?
@@ -489,6 +652,10 @@ abstract class _$$GithubTrendingItemClickedImplCopyWith<$Res> {
           _$GithubTrendingItemClickedImpl value,
           $Res Function(_$GithubTrendingItemClickedImpl) then) =
       __$$GithubTrendingItemClickedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({GithubRepo data});
+
+  $GithubRepoCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -500,61 +667,96 @@ class __$$GithubTrendingItemClickedImplCopyWithImpl<$Res>
       _$GithubTrendingItemClickedImpl _value,
       $Res Function(_$GithubTrendingItemClickedImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GithubTrendingItemClickedImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as GithubRepo,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GithubRepoCopyWith<$Res> get data {
+    return $GithubRepoCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$GithubTrendingItemClickedImpl implements _GithubTrendingItemClicked {
-  const _$GithubTrendingItemClickedImpl();
+  const _$GithubTrendingItemClickedImpl(this.data);
+
+  @override
+  final GithubRepo data;
 
   @override
   String toString() {
-    return 'GithubTrendingEvent.githubTrendingItemClicked()';
+    return 'GithubTrendingEvent.githubTrendingItemClicked(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GithubTrendingItemClickedImpl);
+            other is _$GithubTrendingItemClickedImpl &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GithubTrendingItemClickedImplCopyWith<_$GithubTrendingItemClickedImpl>
+      get copyWith => __$$GithubTrendingItemClickedImplCopyWithImpl<
+          _$GithubTrendingItemClickedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() githubTrendingStarted,
+    required TResult Function() githubTrendingRefreshed,
     required TResult Function() githubTrendingSortByStarsClicked,
     required TResult Function() githubTrendingSortByNameClicked,
-    required TResult Function() githubTrendingItemClicked,
+    required TResult Function(GithubRepo data) githubTrendingItemClicked,
   }) {
-    return githubTrendingItemClicked();
+    return githubTrendingItemClicked(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? githubTrendingStarted,
+    TResult? Function()? githubTrendingRefreshed,
     TResult? Function()? githubTrendingSortByStarsClicked,
     TResult? Function()? githubTrendingSortByNameClicked,
-    TResult? Function()? githubTrendingItemClicked,
+    TResult? Function(GithubRepo data)? githubTrendingItemClicked,
   }) {
-    return githubTrendingItemClicked?.call();
+    return githubTrendingItemClicked?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? githubTrendingStarted,
+    TResult Function()? githubTrendingRefreshed,
     TResult Function()? githubTrendingSortByStarsClicked,
     TResult Function()? githubTrendingSortByNameClicked,
-    TResult Function()? githubTrendingItemClicked,
+    TResult Function(GithubRepo data)? githubTrendingItemClicked,
     required TResult orElse(),
   }) {
     if (githubTrendingItemClicked != null) {
-      return githubTrendingItemClicked();
+      return githubTrendingItemClicked(data);
     }
     return orElse();
   }
@@ -564,6 +766,8 @@ class _$GithubTrendingItemClickedImpl implements _GithubTrendingItemClicked {
   TResult map<TResult extends Object?>({
     required TResult Function(_GithubTrendingStarted value)
         githubTrendingStarted,
+    required TResult Function(_GithubTrendingRefreshed value)
+        githubTrendingRefreshed,
     required TResult Function(_GithubTrendingSortByStarsClicked value)
         githubTrendingSortByStarsClicked,
     required TResult Function(_GithubTrendingSortByNameClicked value)
@@ -578,6 +782,7 @@ class _$GithubTrendingItemClickedImpl implements _GithubTrendingItemClicked {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult? Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult? Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult? Function(_GithubTrendingSortByNameClicked value)?
@@ -592,6 +797,7 @@ class _$GithubTrendingItemClickedImpl implements _GithubTrendingItemClicked {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GithubTrendingStarted value)? githubTrendingStarted,
+    TResult Function(_GithubTrendingRefreshed value)? githubTrendingRefreshed,
     TResult Function(_GithubTrendingSortByStarsClicked value)?
         githubTrendingSortByStarsClicked,
     TResult Function(_GithubTrendingSortByNameClicked value)?
@@ -608,7 +814,13 @@ class _$GithubTrendingItemClickedImpl implements _GithubTrendingItemClicked {
 }
 
 abstract class _GithubTrendingItemClicked implements GithubTrendingEvent {
-  const factory _GithubTrendingItemClicked() = _$GithubTrendingItemClickedImpl;
+  const factory _GithubTrendingItemClicked(final GithubRepo data) =
+      _$GithubTrendingItemClickedImpl;
+
+  GithubRepo get data;
+  @JsonKey(ignore: true)
+  _$$GithubTrendingItemClickedImplCopyWith<_$GithubTrendingItemClickedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -618,7 +830,7 @@ mixin _$GithubTrendingState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message, Exception? exception) error,
-    required TResult Function(List<GithubRepo> data) data,
+    required TResult Function(List<GithubRepo> data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -626,7 +838,7 @@ mixin _$GithubTrendingState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message, Exception? exception)? error,
-    TResult? Function(List<GithubRepo> data)? data,
+    TResult? Function(List<GithubRepo> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -634,32 +846,32 @@ mixin _$GithubTrendingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message, Exception? exception)? error,
-    TResult Function(List<GithubRepo> data)? data,
+    TResult Function(List<GithubRepo> data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(GithubTrendingStateInitial value) initial,
+    required TResult Function(GithubTrendingStateLoading value) loading,
+    required TResult Function(GithubTrendingStateError value) error,
+    required TResult Function(GithubTrendingStateSuccess value) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Data value)? data,
+    TResult? Function(GithubTrendingStateInitial value)? initial,
+    TResult? Function(GithubTrendingStateLoading value)? loading,
+    TResult? Function(GithubTrendingStateError value)? error,
+    TResult? Function(GithubTrendingStateSuccess value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(GithubTrendingStateInitial value)? initial,
+    TResult Function(GithubTrendingStateLoading value)? loading,
+    TResult Function(GithubTrendingStateError value)? error,
+    TResult Function(GithubTrendingStateSuccess value)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -684,25 +896,28 @@ class _$GithubTrendingStateCopyWithImpl<$Res, $Val extends GithubTrendingState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$GithubTrendingStateInitialImplCopyWith<$Res> {
+  factory _$$GithubTrendingStateInitialImplCopyWith(
+          _$GithubTrendingStateInitialImpl value,
+          $Res Function(_$GithubTrendingStateInitialImpl) then) =
+      __$$GithubTrendingStateInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$GithubTrendingStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$GithubTrendingStateInitialImplCopyWithImpl<$Res>
+    extends _$GithubTrendingStateCopyWithImpl<$Res,
+        _$GithubTrendingStateInitialImpl>
+    implements _$$GithubTrendingStateInitialImplCopyWith<$Res> {
+  __$$GithubTrendingStateInitialImplCopyWithImpl(
+      _$GithubTrendingStateInitialImpl _value,
+      $Res Function(_$GithubTrendingStateInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+class _$GithubTrendingStateInitialImpl implements GithubTrendingStateInitial {
+  const _$GithubTrendingStateInitialImpl();
 
   @override
   String toString() {
@@ -712,7 +927,8 @@ class _$InitialImpl implements _Initial {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GithubTrendingStateInitialImpl);
   }
 
   @override
@@ -724,7 +940,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message, Exception? exception) error,
-    required TResult Function(List<GithubRepo> data) data,
+    required TResult Function(List<GithubRepo> data) success,
   }) {
     return initial();
   }
@@ -735,7 +951,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message, Exception? exception)? error,
-    TResult? Function(List<GithubRepo> data)? data,
+    TResult? Function(List<GithubRepo> data)? success,
   }) {
     return initial?.call();
   }
@@ -746,7 +962,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message, Exception? exception)? error,
-    TResult Function(List<GithubRepo> data)? data,
+    TResult Function(List<GithubRepo> data)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -758,10 +974,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(GithubTrendingStateInitial value) initial,
+    required TResult Function(GithubTrendingStateLoading value) loading,
+    required TResult Function(GithubTrendingStateError value) error,
+    required TResult Function(GithubTrendingStateSuccess value) success,
   }) {
     return initial(this);
   }
@@ -769,10 +985,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Data value)? data,
+    TResult? Function(GithubTrendingStateInitial value)? initial,
+    TResult? Function(GithubTrendingStateLoading value)? loading,
+    TResult? Function(GithubTrendingStateError value)? error,
+    TResult? Function(GithubTrendingStateSuccess value)? success,
   }) {
     return initial?.call(this);
   }
@@ -780,10 +996,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(GithubTrendingStateInitial value)? initial,
+    TResult Function(GithubTrendingStateLoading value)? loading,
+    TResult Function(GithubTrendingStateError value)? error,
+    TResult Function(GithubTrendingStateSuccess value)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -793,30 +1009,33 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements GithubTrendingState {
-  const factory _Initial() = _$InitialImpl;
+abstract class GithubTrendingStateInitial implements GithubTrendingState {
+  const factory GithubTrendingStateInitial() = _$GithubTrendingStateInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+abstract class _$$GithubTrendingStateLoadingImplCopyWith<$Res> {
+  factory _$$GithubTrendingStateLoadingImplCopyWith(
+          _$GithubTrendingStateLoadingImpl value,
+          $Res Function(_$GithubTrendingStateLoadingImpl) then) =
+      __$$GithubTrendingStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$GithubTrendingStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+class __$$GithubTrendingStateLoadingImplCopyWithImpl<$Res>
+    extends _$GithubTrendingStateCopyWithImpl<$Res,
+        _$GithubTrendingStateLoadingImpl>
+    implements _$$GithubTrendingStateLoadingImplCopyWith<$Res> {
+  __$$GithubTrendingStateLoadingImplCopyWithImpl(
+      _$GithubTrendingStateLoadingImpl _value,
+      $Res Function(_$GithubTrendingStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
+class _$GithubTrendingStateLoadingImpl implements GithubTrendingStateLoading {
+  const _$GithubTrendingStateLoadingImpl();
 
   @override
   String toString() {
@@ -826,7 +1045,8 @@ class _$LoadingImpl implements _Loading {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GithubTrendingStateLoadingImpl);
   }
 
   @override
@@ -838,7 +1058,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message, Exception? exception) error,
-    required TResult Function(List<GithubRepo> data) data,
+    required TResult Function(List<GithubRepo> data) success,
   }) {
     return loading();
   }
@@ -849,7 +1069,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message, Exception? exception)? error,
-    TResult? Function(List<GithubRepo> data)? data,
+    TResult? Function(List<GithubRepo> data)? success,
   }) {
     return loading?.call();
   }
@@ -860,7 +1080,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message, Exception? exception)? error,
-    TResult Function(List<GithubRepo> data)? data,
+    TResult Function(List<GithubRepo> data)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -872,10 +1092,10 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(GithubTrendingStateInitial value) initial,
+    required TResult Function(GithubTrendingStateLoading value) loading,
+    required TResult Function(GithubTrendingStateError value) error,
+    required TResult Function(GithubTrendingStateSuccess value) success,
   }) {
     return loading(this);
   }
@@ -883,10 +1103,10 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Data value)? data,
+    TResult? Function(GithubTrendingStateInitial value)? initial,
+    TResult? Function(GithubTrendingStateLoading value)? loading,
+    TResult? Function(GithubTrendingStateError value)? error,
+    TResult? Function(GithubTrendingStateSuccess value)? success,
   }) {
     return loading?.call(this);
   }
@@ -894,10 +1114,10 @@ class _$LoadingImpl implements _Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(GithubTrendingStateInitial value)? initial,
+    TResult Function(GithubTrendingStateLoading value)? loading,
+    TResult Function(GithubTrendingStateError value)? error,
+    TResult Function(GithubTrendingStateSuccess value)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -907,25 +1127,28 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements GithubTrendingState {
-  const factory _Loading() = _$LoadingImpl;
+abstract class GithubTrendingStateLoading implements GithubTrendingState {
+  const factory GithubTrendingStateLoading() = _$GithubTrendingStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ErrorImplCopyWith<$Res> {
-  factory _$$ErrorImplCopyWith(
-          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
-      __$$ErrorImplCopyWithImpl<$Res>;
+abstract class _$$GithubTrendingStateErrorImplCopyWith<$Res> {
+  factory _$$GithubTrendingStateErrorImplCopyWith(
+          _$GithubTrendingStateErrorImpl value,
+          $Res Function(_$GithubTrendingStateErrorImpl) then) =
+      __$$GithubTrendingStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, Exception? exception});
 }
 
 /// @nodoc
-class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$GithubTrendingStateCopyWithImpl<$Res, _$ErrorImpl>
-    implements _$$ErrorImplCopyWith<$Res> {
-  __$$ErrorImplCopyWithImpl(
-      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
+class __$$GithubTrendingStateErrorImplCopyWithImpl<$Res>
+    extends _$GithubTrendingStateCopyWithImpl<$Res,
+        _$GithubTrendingStateErrorImpl>
+    implements _$$GithubTrendingStateErrorImplCopyWith<$Res> {
+  __$$GithubTrendingStateErrorImplCopyWithImpl(
+      _$GithubTrendingStateErrorImpl _value,
+      $Res Function(_$GithubTrendingStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -934,7 +1157,7 @@ class __$$ErrorImplCopyWithImpl<$Res>
     Object? message = null,
     Object? exception = freezed,
   }) {
-    return _then(_$ErrorImpl(
+    return _then(_$GithubTrendingStateErrorImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -949,8 +1172,8 @@ class __$$ErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorImpl implements _Error {
-  const _$ErrorImpl(this.message, this.exception);
+class _$GithubTrendingStateErrorImpl implements GithubTrendingStateError {
+  const _$GithubTrendingStateErrorImpl(this.message, this.exception);
 
   @override
   final String message;
@@ -966,7 +1189,7 @@ class _$ErrorImpl implements _Error {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorImpl &&
+            other is _$GithubTrendingStateErrorImpl &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.exception, exception) ||
                 other.exception == exception));
@@ -978,8 +1201,9 @@ class _$ErrorImpl implements _Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
+  _$$GithubTrendingStateErrorImplCopyWith<_$GithubTrendingStateErrorImpl>
+      get copyWith => __$$GithubTrendingStateErrorImplCopyWithImpl<
+          _$GithubTrendingStateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -987,7 +1211,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message, Exception? exception) error,
-    required TResult Function(List<GithubRepo> data) data,
+    required TResult Function(List<GithubRepo> data) success,
   }) {
     return error(message, exception);
   }
@@ -998,7 +1222,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message, Exception? exception)? error,
-    TResult? Function(List<GithubRepo> data)? data,
+    TResult? Function(List<GithubRepo> data)? success,
   }) {
     return error?.call(message, exception);
   }
@@ -1009,7 +1233,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message, Exception? exception)? error,
-    TResult Function(List<GithubRepo> data)? data,
+    TResult Function(List<GithubRepo> data)? success,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1021,10 +1245,10 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(GithubTrendingStateInitial value) initial,
+    required TResult Function(GithubTrendingStateLoading value) loading,
+    required TResult Function(GithubTrendingStateError value) error,
+    required TResult Function(GithubTrendingStateSuccess value) success,
   }) {
     return error(this);
   }
@@ -1032,10 +1256,10 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Data value)? data,
+    TResult? Function(GithubTrendingStateInitial value)? initial,
+    TResult? Function(GithubTrendingStateLoading value)? loading,
+    TResult? Function(GithubTrendingStateError value)? error,
+    TResult? Function(GithubTrendingStateSuccess value)? success,
   }) {
     return error?.call(this);
   }
@@ -1043,10 +1267,10 @@ class _$ErrorImpl implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(GithubTrendingStateInitial value)? initial,
+    TResult Function(GithubTrendingStateLoading value)? loading,
+    TResult Function(GithubTrendingStateError value)? error,
+    TResult Function(GithubTrendingStateSuccess value)? success,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1056,31 +1280,36 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements GithubTrendingState {
-  const factory _Error(final String message, final Exception? exception) =
-      _$ErrorImpl;
+abstract class GithubTrendingStateError implements GithubTrendingState {
+  const factory GithubTrendingStateError(
+          final String message, final Exception? exception) =
+      _$GithubTrendingStateErrorImpl;
 
   String get message;
   Exception? get exception;
   @JsonKey(ignore: true)
-  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GithubTrendingStateErrorImplCopyWith<_$GithubTrendingStateErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DataImplCopyWith<$Res> {
-  factory _$$DataImplCopyWith(
-          _$DataImpl value, $Res Function(_$DataImpl) then) =
-      __$$DataImplCopyWithImpl<$Res>;
+abstract class _$$GithubTrendingStateSuccessImplCopyWith<$Res> {
+  factory _$$GithubTrendingStateSuccessImplCopyWith(
+          _$GithubTrendingStateSuccessImpl value,
+          $Res Function(_$GithubTrendingStateSuccessImpl) then) =
+      __$$GithubTrendingStateSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<GithubRepo> data});
 }
 
 /// @nodoc
-class __$$DataImplCopyWithImpl<$Res>
-    extends _$GithubTrendingStateCopyWithImpl<$Res, _$DataImpl>
-    implements _$$DataImplCopyWith<$Res> {
-  __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
+class __$$GithubTrendingStateSuccessImplCopyWithImpl<$Res>
+    extends _$GithubTrendingStateCopyWithImpl<$Res,
+        _$GithubTrendingStateSuccessImpl>
+    implements _$$GithubTrendingStateSuccessImplCopyWith<$Res> {
+  __$$GithubTrendingStateSuccessImplCopyWithImpl(
+      _$GithubTrendingStateSuccessImpl _value,
+      $Res Function(_$GithubTrendingStateSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1088,7 +1317,7 @@ class __$$DataImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$DataImpl(
+    return _then(_$GithubTrendingStateSuccessImpl(
       null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1099,8 +1328,9 @@ class __$$DataImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DataImpl implements _Data {
-  const _$DataImpl(final List<GithubRepo> data) : _data = data;
+class _$GithubTrendingStateSuccessImpl implements GithubTrendingStateSuccess {
+  const _$GithubTrendingStateSuccessImpl(final List<GithubRepo> data)
+      : _data = data;
 
   final List<GithubRepo> _data;
   @override
@@ -1112,14 +1342,14 @@ class _$DataImpl implements _Data {
 
   @override
   String toString() {
-    return 'GithubTrendingState.data(data: $data)';
+    return 'GithubTrendingState.success(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DataImpl &&
+            other is _$GithubTrendingStateSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -1130,8 +1360,9 @@ class _$DataImpl implements _Data {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
-      __$$DataImplCopyWithImpl<_$DataImpl>(this, _$identity);
+  _$$GithubTrendingStateSuccessImplCopyWith<_$GithubTrendingStateSuccessImpl>
+      get copyWith => __$$GithubTrendingStateSuccessImplCopyWithImpl<
+          _$GithubTrendingStateSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1139,9 +1370,9 @@ class _$DataImpl implements _Data {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message, Exception? exception) error,
-    required TResult Function(List<GithubRepo> data) data,
+    required TResult Function(List<GithubRepo> data) success,
   }) {
-    return data(this.data);
+    return success(data);
   }
 
   @override
@@ -1150,9 +1381,9 @@ class _$DataImpl implements _Data {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message, Exception? exception)? error,
-    TResult? Function(List<GithubRepo> data)? data,
+    TResult? Function(List<GithubRepo> data)? success,
   }) {
-    return data?.call(this.data);
+    return success?.call(data);
   }
 
   @override
@@ -1161,11 +1392,11 @@ class _$DataImpl implements _Data {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message, Exception? exception)? error,
-    TResult Function(List<GithubRepo> data)? data,
+    TResult Function(List<GithubRepo> data)? success,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(this.data);
+    if (success != null) {
+      return success(data);
     }
     return orElse();
   }
@@ -1173,46 +1404,47 @@ class _$DataImpl implements _Data {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Data value) data,
+    required TResult Function(GithubTrendingStateInitial value) initial,
+    required TResult Function(GithubTrendingStateLoading value) loading,
+    required TResult Function(GithubTrendingStateError value) error,
+    required TResult Function(GithubTrendingStateSuccess value) success,
   }) {
-    return data(this);
+    return success(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Data value)? data,
+    TResult? Function(GithubTrendingStateInitial value)? initial,
+    TResult? Function(GithubTrendingStateLoading value)? loading,
+    TResult? Function(GithubTrendingStateError value)? error,
+    TResult? Function(GithubTrendingStateSuccess value)? success,
   }) {
-    return data?.call(this);
+    return success?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Data value)? data,
+    TResult Function(GithubTrendingStateInitial value)? initial,
+    TResult Function(GithubTrendingStateLoading value)? loading,
+    TResult Function(GithubTrendingStateError value)? error,
+    TResult Function(GithubTrendingStateSuccess value)? success,
     required TResult orElse(),
   }) {
-    if (data != null) {
-      return data(this);
+    if (success != null) {
+      return success(this);
     }
     return orElse();
   }
 }
 
-abstract class _Data implements GithubTrendingState {
-  const factory _Data(final List<GithubRepo> data) = _$DataImpl;
+abstract class GithubTrendingStateSuccess implements GithubTrendingState {
+  const factory GithubTrendingStateSuccess(final List<GithubRepo> data) =
+      _$GithubTrendingStateSuccessImpl;
 
   List<GithubRepo> get data;
   @JsonKey(ignore: true)
-  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GithubTrendingStateSuccessImplCopyWith<_$GithubTrendingStateSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
