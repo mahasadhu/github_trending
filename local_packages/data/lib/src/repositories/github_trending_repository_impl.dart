@@ -76,4 +76,24 @@ class GithubTrendingRepositoryImpl implements GithubTrendingRepository {
 
     return currentData;
   }
+
+  @override
+  Future<List<GithubRepo>> sortByName() async {
+    List<GithubRepo> orderedList = lastValue.map((e) => e).toList();
+    orderedList.sort((a, b) => a.name.compareTo(b.name));
+
+    _githubTrendingData.add(orderedList);
+
+    return orderedList;
+  }
+
+  @override
+  Future<List<GithubRepo>> sortByStars() async {
+    List<GithubRepo> orderedList = lastValue.map((e) => e).toList();
+    orderedList.sort((a, b) => (int.parse(a.stargazerCount).compareTo(int.parse(b.stargazerCount))) * -1);
+
+    _githubTrendingData.add(orderedList);
+
+    return orderedList;
+  }
 }

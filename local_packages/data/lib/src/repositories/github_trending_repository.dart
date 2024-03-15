@@ -8,4 +8,7 @@ abstract class GithubTrendingRepository {
 
   Future<List<GithubRepo>> toggleExpanded(String githubRepoId);
 
+  Future<List<GithubRepo>> sortByStars();
+
+  Future<List<GithubRepo>> sortByName();
 }
